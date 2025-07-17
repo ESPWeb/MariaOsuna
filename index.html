@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>María Osuna - Estudio de Uñas y Estética en Manises</title>
+    
+    <!-- Google Fonts: Parisienne for script, Montserrat for body -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Parisienne&family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+
+    <!-- Favicon: Cream background with a brown 'M' -->
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='20' fill='%23F3E9D2'/%3E%3Ctext x='50' y='78' font-family='Parisienne, cursive' font-size='80' fill='%236B4F3A' text-anchor='middle'%3EM%3C/text%3E%3C/svg%3E">
+
+    <style>
+        /* --- Color & Font Variables --- */
+        :root {
+            --chocolate-brown: #6B4F3A;
+            --warm-cream: #F3E9D2;
+            --muted-taupe: #A99985;
+            --white: #FFFFFF;
+            --font-display: 'Parisienne', cursive;
+            --font-body: 'Montserrat', sans-serif;
+        }
+
+        body {
+            font-family: var(--font-body); margin: 0; padding: 0;
+            background-color: var(--warm-cream); color: var(--muted-taupe);
+            line-height: 1.5; padding-bottom: 150px;
+        }
+
+        /* --- Header & Navigation (Compact) --- */
+        .header {
+            background-color: var(--white); padding: 5px 20px; text-align: center;
+            position: sticky; top: 0; z-index: 100; border-bottom: 1px solid var(--muted-taupe);
+        }
+        .hamburger-icon .bar { background-color: var(--chocolate-brown); }
+        #nav-menu { background-color: #fff; }
+        #nav-menu a { color: var(--chocolate-brown); font-weight: bold; transition: color 0.3s; }
+        #nav-menu a:hover { color: var(--muted-taupe); }
+        
+        /* --- General Section Styling (Very Compact) --- */
+        .section { padding: 25px 20px; text-align: center; }
+        .bg-white { background-color: var(--white); }
+        
+        .section-title {
+            font-size: 2em; color: var(--chocolate-brown);
+            margin-top: 0; margin-bottom: 20px;
+        }
+        .icon-diamond {
+            display: block; font-size: 1.5em; line-height: 1;
+            color: var(--chocolate-brown); margin-bottom: 10px;
+        }
+
+        /* --- Hero/Title Section --- */
+        #titulo { padding-top: 25px; padding-bottom: 0; }
+        .hero-title {
+            font-family: var(--font-display); font-size: 4em; font-weight: normal;
+            color: var(--chocolate-brown); margin: 0;
+        }
+        .hero-subtitle {
+            font-size: 1em; color: var(--chocolate-brown); /* UPDATED COLOR */
+            margin: -5px 0 0 0; text-transform: uppercase; letter-spacing: 2px;
+        }
+
+        /* --- Owner Photo (Compact) --- */
+        #propietaria { padding-top: 15px; padding-bottom: 15px; }
+        .owner-photo {
+            width: 150px; height: 150px; border-radius: 50%; object-fit: cover;
+            border: 4px solid var(--chocolate-brown); margin-bottom: 4px;
+        }
+        .owner-name {
+            font-family: var(--font-display); font-size: 2.5em;
+            color: var(--chocolate-brown); margin-top: -5px;
+        }
+        .owner-bio {
+            font-size: 0.9em; max-width: 450px;
+            margin: 10px auto 0; line-height: 1.6;
+            color: var(--chocolate-brown); /* UPDATED COLOR */
+        }
+        
+        /* --- Services & Gallery (Compact) --- */
+        .services-list {
+            columns: 2; -webkit-columns: 2; -moz-columns: 2;
+            list-style-position: inside; list-style-type: '· ';
+            padding: 0; margin: 0 auto; max-width: 550px; text-align: left;
+            color: var(--chocolate-brown);
+        }
+        .services-list li { margin-bottom: 5px; }
+        
+        .gallery-container { display: flex; justify-content: center; gap: 10px; flex-wrap: wrap; }
+        .gallery-container img {
+            width: 100%; max-width: 200px; height: auto;
+            border: 4px solid #fff; box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        /* --- Why Choose Us & FAQ --- */
+        .reasons-container, .faq-container { display: flex; justify-content: center; gap: 25px; flex-wrap: wrap; }
+        .reason-card, .faq-item { text-align: center; flex-basis: 220px; }
+        .reason-card h3, .faq-item h3 { color: var(--chocolate-brown); margin: 0 0 5px 0; font-size: 1.1em; }
+        .reason-card p, .faq-item p {
+            font-size: 0.9em; margin: 0;
+            color: var(--chocolate-brown); /* UPDATED COLOR */
+        }
+        /* Icon from Why Choose Us section */
+        .reason-card .icon { width: 30px; height: 30px; fill: var(--chocolate-brown); margin-bottom: 5px; }
+
+
+        /* --- Contact Section --- */
+        #contacto { background-color: var(--chocolate-brown); color: var(--warm-cream); }
+        #contacto .section-title { color: var(--warm-cream); }
+        .contact-info { list-style: none; padding: 0; }
+        .contact-info li { margin-bottom: 5px; }
+        .contact-info strong { color: var(--muted-taupe); }
+        .contact-info a { color: var(--warm-cream); text-decoration: none; }
+
+        /* --- Helper/Responsive Styles --- */
+        .hamburger-icon { cursor: pointer; display: inline-block; padding: 10px; }
+        .hamburger-icon .bar { display: block; width: 25px; height: 3px; margin: 5px auto; transition: 0.4s; }
+        #nav-menu { display: none; list-style: none; padding: 0; margin: 5px 0 0 0; }
+        #nav-menu li { padding: 8px 0; }
+        @media (min-width: 768px) {
+            .hamburger-icon { display: none; }
+            #nav-menu { display: flex; justify-content: center; gap: 30px; }
+        }
+        @media (max-width: 480px) { .services-list { columns: 1; -webkit-columns: 1; -moz-columns: 1; } }
+    </style>
+</head>
+<body>
+
+    <header class="header">
+        <div class="hamburger-icon" id="hamburger-btn"> <span class="bar"></span><span class="bar"></span><span class="bar"></span> </div>
+        <nav>
+            <ul id="nav-menu">
+                <li><a href="#propietaria">Propietaria</a></li>
+                <li><a href="#servicios">Servicios</a></li>
+                <li><a href="#trabajos">Trabajos</a></li>
+                <li><a href="#elegirnos">Por Qué Elegirnos</a></li>
+                <li><a href="#faq">Preguntas</a></li>
+                <li><a href="#contacto">Contacto</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+
+        <section id="titulo" class="section">
+            <h1 class="hero-title">María Osuna</h1>
+            <p class="hero-subtitle">Estudio de Uñas y Estética &middot; Manises</p>
+        </section>
+
+        <section id="propietaria" class="section bg-white">
+            <h2 class="section-title">Propietaria</h2>
+            <img src="JefeFoto.webp" alt="Foto de la propietaria, María" class="owner-photo" width="400" height="400">
+            <p class="owner-name">María</p>
+            <p class="owner-bio">Bienvenida a mi estudio, un espacio creado con mimo para tu bienestar. Mi pasión es realzar tu belleza natural a través de un trabajo artesanal y cuidado al detalle. Aquí, cada clienta es única.</p>
+        </section>
+
+        <section id="servicios" class="section">
+            <h2 class="section-title">Nuestros Servicios</h2>
+            <ul class="services-list">
+                <li>Manicura Permanente</li><li>Pedicura Spa</li><li>Uñas de Gel</li><li>Uñas Acrílicas</li><li>Nail Art a Mano Alzada</li><li>Tratamientos de Queratina</li><li>Lifting de Pestañas</li><li>Diseño de Cejas</li>
+            </ul>
+        </section>
+
+        <section id="trabajos" class="section bg-white">
+            <h2 class="section-title">Nuestros Trabajos</h2>
+            <div class="gallery-container">
+                 <img src="Photo1.webp" alt="Diseño de uñas profesional" width="400" height="400">
+                 <img src="Photo2.webp" alt="Manicura elegante" width="400" height="400">
+                 <img src="Photo3.webp" alt="Nail art creativo" width="400" height="400">
+            </div>
+        </section>
+        
+        <section id="elegirnos" class="section">
+            <h2 class="section-title">¿Por Qué Elegirnos?</h2>
+            <div class="reasons-container">
+                <div class="reason-card">
+                    <svg class="icon" viewBox="0 0 24 24"><path d="M12 2L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-3zm0 10.99h7c-.53 4.12-3.28 7.79-7 8.94V13H5V6.3l7-3.11v9.8z"></path></svg>
+                    <h3>Calidad e Higiene</h3>
+                    <p>Esterilización de instrumental y productos de alta gama para garantizar tu seguridad y un resultado perfecto.</p>
+                </div>
+                <div class="reason-card">
+                    <svg class="icon" viewBox="0 0 24 24"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"></path></svg>
+                    <h3>Trato Personalizado</h3>
+                    <p>Dedicamos el tiempo necesario a cada clienta, asesorando y cuidando cada detalle para un acabado único.</p>
+                </div>
+                <div class="reason-card">
+                    <svg class="icon" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"></path></svg>
+                    <h3>Técnica y Arte</h3>
+                    <p>En constante formación para ofrecerte las últimas tendencias y diseños creativos a mano alzada.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="faq" class="section bg-white">
+            <h2 class="section-title">Preguntas Frecuentes</h2>
+            <div class="faq-container">
+                <div class="faq-item">
+                    <span class="icon-diamond">◆</span>
+                    <h3>¿Es necesario pedir cita?</h3>
+                    <p>Sí, trabajo exclusivamente con cita previa para dedicarte el 100% de mi atención.</p>
+                </div>
+                <div class="faq-item">
+                    <span class="icon-diamond">◆</span>
+                    <h3>¿Qué métodos de pago aceptas?</h3>
+                    <p>Puedes pagar con tarjeta, en efectivo o a través de Bizum.</p>
+                </div>
+                <div class="faq-item">
+                    <span class="icon-diamond">◆</span>
+                    <h3>¿Ofreces garantía?</h3>
+                    <p>Si una uña se rompe en los primeros 5 días por un fallo técnico, la reparación es gratuita.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="contacto" class="section">
+            <h2 class="section-title">Contacto</h2>
+            <ul class="contact-info">
+                <li><strong>Estudio:</strong> María Osuna - Estudio de Uñas y Estética</li>
+                <li><strong>Dirección:</strong> Carrer de La Viña, 11, 46940 Manises, Valencia</li>
+                <li><strong>Teléfono / Citas:</strong> <a href="tel:613238203">613 23 82 03</a></li>
+                <li><strong>Email:</strong> <a href="mailto:contacto.mariaosuna@email.com">contacto.mariaosuna@email.com</a></li>
+                <li><strong>Horario:</strong> Lunes a Viernes de 9:30 a 19:00.</li>
+            </ul>
+        </section>
+
+    </main>
+    
+    <footer>
+        <div id="cookie-banner" style="position: fixed; bottom: 0; left: 0; width: 100%; background-color: #f0f0f0; padding: 15px; text-align: center; border-top: 1px solid #ccc; z-index: 1000; display: flex; justify-content: center; align-items: center; flex-wrap: wrap;">
+            <p style="margin: 0 15px 10px 0; color: #333;">
+                <strong>Aviso Sobre Cookies:</strong> Este sitio web no utiliza cookies. Sin embargo, nuestro proveedor de alojamiento utiliza cookies esenciales y funcionales para operar este sitio y prestar sus servicios. Al continuar utilizando este sitio, acepta el uso de cookies por parte de nuestro proveedor de alojamiento.
+            </p>
+            <div>
+                <button id="accept-cookies" style="background-color: #007bff; color: white; border: none; padding: 8px 15px; border-radius: 5px; cursor: pointer; margin: 5px;">Aceptar</button>
+                <button id="decline-cookies" style="background-color: #dc3545; color: white; border: none; padding: 8px 15px; border-radius: 5px; cursor: pointer; margin: 5px;">Rechazar</button>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        const hamburgerBtn = document.getElementById('hamburger-btn');
+        const navMenu = document.getElementById('nav-menu');
+        const navLinks = navMenu.querySelectorAll('a');
+        hamburgerBtn.addEventListener('click', () => { navMenu.style.display = (navMenu.style.display === 'block') ? 'none' : 'block'; });
+        navLinks.forEach(link => { link.addEventListener('click', () => { if (window.innerWidth < 768) { navMenu.style.display = 'none'; } }); });
+        const cookieBanner = document.getElementById('cookie-banner');
+        const acceptBtn = document.getElementById('accept-cookies');
+        const declineBtn = document.getElementById('decline-cookies');
+        function hideBanner() { cookieBanner.style.display = 'none'; }
+        acceptBtn.addEventListener('click', hideBanner);
+        declineBtn.addEventListener('click', hideBanner);
+    </script>
+</body>
+</html>
